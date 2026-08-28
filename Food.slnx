@@ -1,2 +1,7 @@
 <Solution>
+  <Project Path="foodui.client/food.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="FoodUI.Server/Food.Server.csproj" />
 </Solution>
