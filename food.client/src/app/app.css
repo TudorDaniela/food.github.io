@@ -10,6 +10,16 @@
   color: #20231f;
 }
 
+.sidebar { display: none; }
+.main-content { min-width: 0; }
+.mobile-brand { display: flex; }
+.sidebar-tagline { margin: 2px 0 42px 40px; color: #697069; font-size: 11px; }
+.sidebar-nav { display: flex; flex-direction: column; gap: 10px; }
+.sidebar-nav a { display: flex; align-items: center; gap: 14px; padding: 13px 16px; border-radius: 12px; color: #697069; font-size: 14px; font-weight: 700; text-decoration: none; }
+.sidebar-nav a span { width: 22px; color: #6d756c; font-size: 23px; text-align: center; }
+.sidebar-nav a.active { background: #e8f0e5; color: #276533; }
+.sidebar-nav a.active span { color: #276533; }
+
 .topbar, .top-actions, .search-row, .section-heading, .recipe-meta, .bottom-nav {
   display: flex;
   align-items: center;
@@ -60,4 +70,15 @@
   .app-shell { min-height: auto; margin: 30px auto; border: 1px solid #e1e5df; border-radius: 28px; box-shadow: 0 15px 45px #25362412; }
   .bottom-nav { position: absolute; }
   .add-button { position: absolute; }
+}
+
+@media (min-width: 768px) {
+  .app-shell { display: grid; grid-template-columns: 220px minmax(0, 1fr); width: min(1180px, calc(100% - 64px)); min-height: 720px; margin: 32px auto; padding: 0; overflow: hidden; }
+  .sidebar { display: block; padding: 38px 22px; border-right: 1px solid #e7e9e4; background: #fbfcf9; }
+  .sidebar .brand { font-size: 24px; }
+  .main-content { padding: 30px 42px 48px; }
+  .mobile-brand, .main-content > .tagline { display: none; }
+  .topbar { justify-content: flex-end; }
+  .bottom-nav { display: none; }
+  .add-button { position: fixed; right: 42px; bottom: 36px; left: auto; transform: none; }
 }
