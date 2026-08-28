@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
 import { App } from './app';
 
 describe('App', () => {
@@ -7,7 +8,8 @@ describe('App', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [App]
+      declarations: [App],
+      imports: [RouterModule.forRoot([])]
     }).compileComponents();
   });
 
@@ -20,9 +22,9 @@ describe('App', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should provide Foodie categories and recipes', () => {
-    expect(component.categories).toEqual(['All', 'Breakfast', 'Lunch', 'Dinner', 'Snack']);
-    expect(component.popularRecipes.length).toBe(3);
-    expect(component.saladRecipes.length).toBe(3);
+  it('should render the Foodie shell', () => {
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('.brand').textContent).toContain('Foodie');
+    expect(fixture.nativeElement.querySelector('router-outlet')).toBeTruthy();
   });
 });

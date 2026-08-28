@@ -14,7 +14,8 @@ import { App } from './app';
     AppRoutingModule
   ],
   providers: [
-    provideBrowserGlobalErrorListeners()
+    provideBrowserGlobalErrorListeners(),
+    // Keep AppRoutingModule for standalone routed components integration
   ],
   bootstrap: [App]
 })

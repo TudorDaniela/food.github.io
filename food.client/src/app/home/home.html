@@ -1,0 +1,35 @@
+<section class="home-content">
+  <section class="welcome">
+    <h1>Hello, Dana! <span aria-label="waving hand">👋</span></h1>
+    <p>What are you in the mood for?</p>
+  </section>
+
+  <div class="search-row">
+    <label class="search-box"><span aria-hidden="true">⌕</span><input type="search" placeholder="Search recipes, ingredients..." aria-label="Search recipes and ingredients"></label>
+    <button class="filter-button" aria-label="Filter recipes">☷</button>
+  </div>
+
+  <nav class="category-list" aria-label="Recipe categories">
+    <button *ngFor="let category of categories; let first = first" [class.selected]="first">{{ category }}</button>
+  </nav>
+
+  <section class="recipe-section">
+    <div class="section-heading"><h2>Popular for you</h2><a href="#popular">See all</a></div>
+    <div class="recipe-grid" id="popular">
+      <article class="recipe-card" *ngFor="let recipe of popularRecipes">
+        <div class="image-wrap"><img [src]="recipe.image" [alt]="recipe.name"><button class="favorite-button" aria-label="Save recipe">♡</button></div>
+        <h3>{{ recipe.name }}</h3><div class="recipe-meta"><span>◷ {{ recipe.time }}</span><span>★ {{ recipe.rating }}</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="recipe-section">
+    <div class="section-heading"><h2>Because you liked Salads</h2><a href="#salads">See all</a></div>
+    <div class="recipe-grid" id="salads">
+      <article class="recipe-card" *ngFor="let recipe of saladRecipes">
+        <div class="image-wrap"><img [src]="recipe.image" [alt]="recipe.name"><button class="favorite-button" aria-label="Save recipe">♡</button></div>
+        <h3>{{ recipe.name }}</h3><div class="recipe-meta"><span>◷ {{ recipe.time }}</span><span>★ {{ recipe.rating }}</span></div>
+      </article>
+    </div>
+  </section>
+</section>

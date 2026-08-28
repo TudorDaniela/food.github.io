@@ -1,0 +1,26 @@
+.home-content { padding-top: 24px; }
+.welcome h1 { margin: 0 0 5px; font-size: 21px; letter-spacing: -.4px; }
+.welcome h1 span { font-size: 18px; }
+.welcome p { margin: 0 0 17px; color: #71766f; font-size: 12px; }
+.search-row { display: flex; align-items: center; gap: 9px; }
+.search-box { display: flex; align-items: center; flex: 1; height: 42px; padding: 0 12px; border: 1px solid #e2e3de; border-radius: 12px; background: #fff; box-shadow: 0 3px 12px #20351a08; }
+.search-box span { margin-right: 8px; color: #353c36; font-size: 25px; line-height: 1; }
+.search-box input { min-width: 0; width: 100%; border: 0; outline: 0; color: #20231f; font: inherit; font-size: 11px; }
+.search-box input::placeholder { color: #8c918b; }
+.filter-button { width: 42px; height: 42px; border: 1px solid #e2e3de; border-radius: 12px; background: #fff; color: #313932; cursor: pointer; font-size: 23px; }
+.category-list { display: flex; gap: 9px; overflow-x: auto; padding: 15px 0 24px; scrollbar-width: none; }
+.category-list::-webkit-scrollbar { display: none; }
+.category-list button { flex: 0 0 auto; padding: 8px 13px; border: 1px solid #eaebe8; border-radius: 20px; background: #fff; color: #444b44; box-shadow: 0 3px 10px #263b2208; cursor: pointer; font: inherit; font-size: 10px; }
+.category-list button.selected { border-color: #276533; background: #276533; color: #fff; }
+.recipe-section { margin-bottom: 27px; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.section-heading h2 { margin: 0; font-size: 13px; letter-spacing: -.15px; }
+.section-heading a { color: #36743c; font-size: 10px; font-weight: 700; text-decoration: none; }
+.recipe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.recipe-card { min-width: 0; }
+.image-wrap { position: relative; height: 107px; overflow: hidden; border-radius: 12px; background: #d6dfcd; }
+.image-wrap img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.favorite-button { position: absolute; right: 4px; bottom: 3px; padding: 1px; border: 0; background: transparent; color: #c9cbc7; cursor: pointer; font-size: 21px; line-height: 1; text-shadow: 0 1px 2px #3335; }
+.recipe-card h3 { min-height: 27px; margin: 7px 2px 4px; font-size: 10px; line-height: 1.3; }
+.recipe-meta { display: flex; justify-content: space-between; color: #767b74; font-size: 8px; }
+.recipe-meta span:last-child { color: #8c7140; }
