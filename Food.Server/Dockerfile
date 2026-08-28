@@ -19,20 +19,20 @@ RUN npm install -g @angular/cli
 FROM with-node AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["FoodUI/FoodUI.Server/FoodUI.Server.csproj", "FoodUI/FoodUI.Server/"]
-COPY ["foodui.client/foodui.client.esproj", "foodui.client/"]
-RUN dotnet restore "./FoodUI/FoodUI.Server/FoodUI.Server.csproj"
+COPY ["Food/Food.Server/Food.Server.csproj", "Food/Food.Server/"]
+COPY ["food.client/food.client.esproj", "food.client/"]
+RUN dotnet restore "./Food/Food.Server/Food.Server.csproj"
 COPY . .
-WORKDIR "/src/FoodUI/FoodUI.Server"
-RUN dotnet build "./FoodUI.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/Food/Food.Server"
+RUN dotnet build "./Food.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./FoodUI.Server.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./Food.Server.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "FoodUI.Server.dll"]
+ENTRYPOINT ["dotnet", "Food.Server.dll"]

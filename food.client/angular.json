@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "foodui.client": {
+    "food.client": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -66,10 +66,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "foodui.client:build:production"
+              "buildTarget": "food.client:build:production"
             },
             "development": {
-              "buildTarget": "foodui.client:build:development"
+              "buildTarget": "food.client:build:development"
             }
           },
           "defaultConfiguration": "development",

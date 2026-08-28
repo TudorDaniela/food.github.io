@@ -1,6 +1,7 @@
+using Food.Server;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FoodUI.Server.Controllers
+namespace Food.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]

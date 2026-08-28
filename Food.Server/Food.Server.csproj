@@ -7,7 +7,7 @@
     <UserSecretsId>472e4e96-81fc-4afb-86a3-503ecec4ba80</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
-    <SpaRoot>..\foodui.client</SpaRoot>
+    <SpaRoot>..\food.client</SpaRoot>
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:64238</SpaProxyServerUrl>
   </PropertyGroup>
@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\foodui.client\food.client.esproj">
+    <ProjectReference Include="..\food.client\food.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>

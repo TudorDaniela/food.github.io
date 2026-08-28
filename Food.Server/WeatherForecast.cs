@@ -1,4 +1,4 @@
-namespace FoodUI.Server
+namespace Food.Server
 {
     public class WeatherForecast
     {

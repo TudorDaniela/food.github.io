@@ -34,5 +34,5 @@ export class App implements OnInit {
     );
   }
 
-  protected readonly title = signal('foodui.client');
+  protected readonly title = signal('food.client');
 }
