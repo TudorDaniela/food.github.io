@@ -3,5 +3,6 @@
     <Build />
     <Deploy />
   </Project>
+  <Project Path="Food.Server.UnitTests/Food.Server.UnitTests.csproj" Id="46c6e905-ee80-4305-a874-e4f11360b997" />
   <Project Path="Food.Server/Food.Server.csproj" />
 </Solution>
