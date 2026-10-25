@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 
 interface Recipe {
@@ -11,7 +11,7 @@ interface Recipe {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
