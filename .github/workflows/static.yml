@@ -51,8 +51,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./food.client/dist/food.client/
-
+          path: ./food.client/dist/food.client/browser
+      
       - name: Run unit tests
         run: dotnet test ./Food.Server.UnitTests/Food.Server.UnitTests.csproj --configuration Release
 
