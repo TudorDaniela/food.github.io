@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 interface Recipe {
   name: string;
@@ -13,6 +13,7 @@ interface Recipe {
   standalone: true,
   imports: [],
   templateUrl: './home.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './home.css'
 })
 export class HomeComponent {
