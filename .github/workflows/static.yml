@@ -24,6 +24,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.x
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -37,13 +42,19 @@ jobs:
       - name: Build Angular
         run: cd food.client && npm run build -- --base-href=/food.github.io/
 
+      - name: Build Food.Server
+        run: dotnet build ./Food.Server/Food.Server.csproj --configuration Release
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./food.client/dist/food.client/browser
+          path: ./food.client/dist/food.client/
+
+      - name: Run unit tests
+        run: dotnet test ./Food.Server.UnitTests/Food.Server.UnitTests.csproj --configuration Release
 
   deploy:
     needs: build
